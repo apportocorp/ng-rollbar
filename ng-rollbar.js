@@ -20,10 +20,7 @@
   }]);
 
   angular.module('tandibar/ng-rollbar').provider('Rollbar', function RollbarProvider() {
-    var rollbarProvider = this;
     var rollbarActivated = true;
-
-    var rollbarVersion = '2.14.4';
 
     this.init = function(config) {
       var _rollbarConfig = config;
