@@ -5,6 +5,41 @@ ng-rollbar
 
 As rollbar encourages all users to stay up to date, and we can't easily track their versioning with our own, please look at release notes if you need to use an older version, otherwise we always deploy with the latest commit in the rollbar.js master branch.
 
+Development Environment
+------------
+The development environment follows as below:
+* Node: 8.10.0
+* NPM: 3.5.2
+
+```
+sudo apt install nodejs
+sudo apt install npm
+```
+
+Synchronization with the latest version of Rollbar
+------------
+
+You have to copy the source code in https://raw.githubusercontent.com/rollbar/rollbar.js/master/dist/rollbar.snippet.js and paste it to the line 55 of `ng-rollbar.js` file.
+
+Minify and Deploy
+------------
+For minifying the `ng-rollbar.js` file, we can use the **[JSMin](https://dustinpfister.github.io/2017/08/18/nodejs-jsmin/)** tool.
+This tools is a Node.js module and we can install it globally and using the CLI command, minify your JavaScript project.
+```
+$ npm install -g jsmin
+$ jsmin -o ng-rollbar.min.js ng-rollbar.js
+```
+**Also, please note that if we add the `ng-rollbar.js` file to https://www.jsdelivr.com/, the website automatically generates a minified version (`ng-rollbar.min.js`) with the source maps.**
+<br/><br/>
+For deploying the `ng-rollbar.js` file on the **CDN**, we open the https://www.jsdelivr.com/github page and add the following path:
+```
+https://github.com/apportocorp/ng-rollbar/blob/2.26.2/ng-rollbar.js
+```
+
+Then, we can get the `ng-rollbar.js` and `rollbar.min.js` files from the following URLs:
+* https://cdn.jsdelivr.net/gh/apportocorp/ng-rollbar@2.26.2/ng-rollbar.js
+* https://cdn.jsdelivr.net/gh/apportocorp/ng-rollbar@2.26.2/ng-rollbar.min.js
+
 Installation
 ------------
 
